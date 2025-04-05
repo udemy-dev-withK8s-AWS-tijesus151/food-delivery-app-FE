@@ -1,4 +1,4 @@
-import { API_URL_Order } from 'src/app/constants/url';
+import { K8ExternalIp } from 'src/app/constants/url';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
@@ -7,12 +7,12 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class OrderService{
-    private apiUrl = API_URL_Order+'/order/saveOrder';
+    private apiUrl = K8ExternalIp+'/order/saveOrder';
 
     httpOptions = {
         headers: new HttpHeaders({
             'content-type': 'text/plain',
-            'Access-Control-Allow-Origin': 'http://localhost:4200'
+            'Access-Control-Allow-Origin': K8ExternalIp //'http://localhost:4200'
         })
     };
 
